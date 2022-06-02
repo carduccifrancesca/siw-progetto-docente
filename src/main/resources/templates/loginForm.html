@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Societa' Catering</title>
+<link rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<header>
+		<h1 id="titolo">Catering</h1>
+	</header>
+
+	<div>
+		<form th:action="@{/login}"	method="POST">
+			<div>
+				<span>Username: </span>
+				<span><input name="username" type="text" required /></span>
+			</div>
+
+			<div>
+				<span>Password: </span> 
+				<span><input name="password" type="text" required /></span>
+			</div>
+
+			<div>
+				<button type="submit">Login</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

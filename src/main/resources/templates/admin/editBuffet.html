@@ -3,7 +3,7 @@
 
 <head>  	
 	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">    
-	<title>Aggiungi piatti</title> 
+	<title>Modifica Buffet</title> 
 </head> 
 
 <body>
@@ -27,6 +27,8 @@
 				<li th:each="piatto: ${buffet.piatti}">
 					<a href="piatto.html" th:href="@{'/piatto' + '/' + ${piatto.id}}"
 					   th:text="${piatto.nome}">Piatto</a>
+					<a th:href="@{'/admin' + '/buffet' + '/' + ${buffet.id} + 
+								'/removePiatto' +'/' + ${piatto.id}}">Rimuovi</a>
 				</li>	   	
 			</ul>
 		</div>
@@ -37,7 +39,7 @@
 			<li th:each="piatto: ${piattiAssenti}">
 				<a href="piatto.html" th:href="@{'/piatto' + '/' + ${piatto.id}}"
 				   th:text="${piatto.nome}">Piatto</a>
-				<a href="#" th:href="@{'/buffet' + '/' + ${buffet.id} + '/' + ${piatto.id}}">Aggiungi al buffet</a>
+				<a href="#" th:href="@{'/admin' + '/buffet' + '/' + ${buffet.id} + '/add' + '/' + ${piatto.id}}">Aggiungi al buffet</a>
 			</li>	   	
 		</ul>
 	</div>

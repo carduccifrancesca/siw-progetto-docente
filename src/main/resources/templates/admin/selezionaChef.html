@@ -3,24 +3,22 @@
 
 	<head>  	
 		<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">
-		<title>Buffet</title>    
+		<title>Chef</title>    
 	</head> 
 
 	<body>
 	<header> 
-		<div><strong>Buffet disponibili</strong></div>
+		<div><strong>Chef disponibili</strong></div>
 	</header>
 	
 	<div>
 		<p>
 			<ul>
-				<li th:each="buffet: ${buffets}">
+				<li th:each="chef: ${chefs}">
 					<span>
-						<a href="buffet.html" th:href="@{'/buffet' + '/' + ${buffet.id}}"
-				   		th:text="${buffet.nome}">Buffet 1</a>
-				   	</span>
-				   	<span>
-				   		<a th:href="@{'/editBuffet' + '/' + ${buffet.id}}">Modifica</a>
+						<a href="chef.html" th:href="@{'/chef' + '/' + ${chef.id}}"
+				   		th:text="${chef.nome} + ' ' + ${chef.cognome}">Paolo Rossi</a>
+				   		<a th:href="@{'/admin' + '/chef' + '/' + ${chef.id} + '/newBuffet'}">Seleziona</a>
 				   	</span>
 				</li>	   	
 			</ul>

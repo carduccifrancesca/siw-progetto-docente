@@ -30,7 +30,7 @@ public class BuffetController {
 	@Autowired
 	private BuffetValidator buffetValidator;
 	
-	@PostMapping("/chef/{chefId}/buffet")
+	@PostMapping("/admin/chef/{chefId}/buffet")
 	public String addBuffet(@Valid @ModelAttribute(value="buffet") Buffet buffet,
 			@PathVariable("chefId") Long chefId,
 			BindingResult bindingResult, Model model) {
@@ -41,19 +41,19 @@ public class BuffetController {
 			this.buffetService.save(buffet, chefService.findById(chefId));
 			model.addAttribute("buffet", buffet);
 			model.addAttribute("piattiAssenti", buffetService.findPiattiNotInBuffet(buffet.getId()));
-			return "addPiattiToBuffet.html";
+			return "admin/addPiattiToBuffet.html";
 		}
 		else {
 			model.addAttribute("buffet", buffet);
-			return "buffetForm.html";
+			return "admin/buffetForm.html";
 		}
 	}
 	
-	@GetMapping("/chef/{chefId}/newBuffet")
+	@GetMapping("/admin/chef/{chefId}/newBuffet")
 	public String newBuffet(@PathVariable("chefId") Long chefId, Model model) {
 		model.addAttribute("chef", chefService.findById(chefId));
 		model.addAttribute("buffet", buffetService.createBuffet());
-		return "buffetForm.html";
+		return "admin/buffetForm.html";
 	}
 	
 	@GetMapping("/buffet/{buffetId}")
@@ -75,44 +75,44 @@ public class BuffetController {
 		return "buffets.html";
 	}
 	
-	@GetMapping("/buffet/{buffetId}/{piattoId}")
+	@GetMapping("/admin/buffet/{buffetId}/{piattoId}")
 	public String addPiattoToNewBuffet(@PathVariable("buffetId") Long buffetId, 
 			@PathVariable("piattoId") Long piattoId, Model model) {
 		this.buffetService.addPiattoToBuffet(buffetId, piattoId);
 		model.addAttribute(buffetService.findById(buffetId));
 		model.addAttribute("piattiAssenti", buffetService.findPiattiNotInBuffet(buffetId));
-		return "addPiattiToBuffet.html";
+		return "admin/addPiattiToBuffet.html";
 	}
 	
-	@GetMapping("/buffet/{buffetId}/add/{piattoId}")
+	@GetMapping("/admin/buffet/{buffetId}/add/{piattoId}")
 	public String addPiattoToBuffet(@PathVariable("buffetId") Long buffetId, 
 			@PathVariable("piattoId") Long piattoId, Model model) {
 		this.buffetService.addPiattoToBuffet(buffetId, piattoId);
 		model.addAttribute(buffetService.findById(buffetId));
 		model.addAttribute("piattiAssenti", buffetService.findPiattiNotInBuffet(buffetId));
-		return "editBuffet.html";
+		return "admin/editBuffet.html";
 	}
 	
-	@GetMapping("/buffet/{buffetId}/removePiatto/{piattoId}")
+	@GetMapping("/admin/buffet/{buffetId}/removePiatto/{piattoId}")
 	public String removePiattoFromBuffet(@PathVariable("buffetId") Long buffetId,
 			@PathVariable("piattoId") Long piattoId, Model model) {
 		this.buffetService.removePiattoFromBuffet(buffetId, piattoId);
 		model.addAttribute(buffetService.findById(buffetId));
 		model.addAttribute("piattiAssenti", buffetService.findPiattiNotInBuffet(buffetId));
-		return "editBuffet.html";
+		return "admin/editBuffet.html";
 	}
 	
-	@GetMapping("/editBuffet")
+	@GetMapping("/admin/editBuffet")
 	public String chooseBuffetToEdit(Model model) {
 		model.addAttribute("buffets", buffetService.findAll());
-		return "selectBuffetToEdit.html";
+		return "admin/selectBuffetToEdit.html";
 	}
 	
-	@GetMapping("/editBuffet/{buffetId}")
+	@GetMapping("/admin/editBuffet/{buffetId}")
 	public String editBuffet(@PathVariable("buffetId") Long buffetId, Model model) {
 		model.addAttribute("buffet", buffetService.findById(buffetId));
 		model.addAttribute("piattiAssenti", buffetService.findPiattiNotInBuffet(buffetId));
-		return "editBuffet.html";
+		return "admin/editBuffet.html";
 	}
 
 }

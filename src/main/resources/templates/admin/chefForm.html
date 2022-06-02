@@ -3,17 +3,17 @@
 
 	<head>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-		<title>Inserimento buffet</title>			
+		<title>Inserimento chef</title>			
 	</head>
 	
 	<body>
 	<header> 
-		<div><strong>Inserimento dati buffet</strong></div>
+		<div><strong>Inserimento dati chef</strong></div>
 	</header>
 	
 	<div>
 
-		<form th:action="@{'/chef' + '/' + ${chef.id} + '/buffet'}" method="POST" th:object="${buffet}">
+		<form th:action="@{/admin/chef}" method="POST" th:object="${chef}">
 	
 			<div>
 				<span>Nome: </span>
@@ -21,12 +21,17 @@
 			</div>
 			
 			<div>
-				<span>Descrizione: </span>
-				<span><input type="text" th:field="*{descrizione}"/></span>	
+				<span>Cognome: </span>
+				<span><input type="text" th:field="*{cognome}"/></span>	
 			</div>
 			
 			<div>
-				<button type="submit">Conferma nuovo buffet</button>
+				<span>Nazionalità: </span>
+				<span><input type="text" th:field="*{nazionalita}"/></span>
+			</div>
+			
+			<div>
+				<button type="submit">Conferma nuovo chef</button>
 			</div>
 			
 		</form>
