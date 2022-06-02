@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>  	
+		<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dettagli Piatto</title>    
+	</head> 
+
+	<body>
+	<header> 
+		<div><strong>Dettagli piatto</strong></div>
+	</header>
+	
+	<div>
+			<div><strong>Nome: </strong>
+			<span th:text="${piatto.nome}">Piatto</span></div>
+			<div><strong>Descrizione: </strong>
+			<span th:text="${piatto.descrizione}">Descrizione</span></div>
+	</div>
+	
+	<div th:if="${!piatto.ingredienti.empty}">Lista ingredienti:
+		<ul>
+			<li th:each="ingrediente: ${piatto.ingredienti}">
+				<a href="ingrediente.html" th:href="@{'/ingrediente' + '/' + ${ingrediente.id}}"
+				   th:text="${ingrediente.nome}">Piatto</a>
+			</li>	   	
+		</ul>
+	</div>
+
+	<div>
+		<a href="/"><strong>Home</strong></a>
+	</div>
+	</body>
+
+</html>
