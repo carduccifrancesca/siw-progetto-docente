@@ -14,19 +14,19 @@
 	</header>
 
 	<div>
-		<form th:action="@{/login}"	method="POST">
+		<form th:action="@{/login}" method="POST">
 			<div>
-				<span>Username: </span>
-				<span><input name="username" type="text" required /></span>
-			</div>
-
-			<div>
-				<span>Password: </span> 
-				<span><input name="password" type="text" required /></span>
-			</div>
-
-			<div>
-				<button type="submit">Login</button>
+				<div>
+					<span>Username:</span>
+					<span><input name="username" type="text" required /></span>
+				</div>		
+				<div>
+					<span>Password:</span>
+					<span><input name="password" type="password" required /></span>
+				</div>
+				<div>
+					<span><button type="submit">Login</button></span>
+				</div>
 			</div>
 		</form>
 	</div>

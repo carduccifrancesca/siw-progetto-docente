@@ -3,6 +3,7 @@ package it.uniroma3.siw.catering.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationContextInitializedEvent;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -41,6 +42,11 @@ public class AuthenticationController {
 		return "loginForm.html";
 	}
 	
+	@GetMapping("/logout") 
+	public String logout(Model model) {
+		return "index.html";
+	}
+	
 	@GetMapping("/register")
 	public String getRegisterPage(Model model) {
 		model.addAttribute("user", new User());
@@ -57,7 +63,7 @@ public class AuthenticationController {
 		if(!userBindingResult.hasErrors() && !credentialsBindingResult.hasErrors()) {
 			credentials.setUser(user);
             credentialsService.saveCredentials(credentials);
-            return "registrationSuccessfull.html";
+            return "registrationSuccessful.html";
 		}
 		return "registerUser.html";
 	}
