@@ -4,26 +4,25 @@
 	<head>  
 	    <meta charset="ISO-8859-1" />
 	    <title>Societa' Catering</title>
+	    <link rel="stylesheet" th:href="@{css/form.css}"/>
+		<link rel="stylesheet" th:href="@{css/my-style.css}"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head> 
 	 
 	<body> 
-	
-	<header> 
-		<h1 id="titolo">Catering</h1>
-	</header>
-	<div>
-		<ul>
-			<li><a th:href="@{/admin/chefForm}">Aggiungi chef</a></li>
-			<li><a th:href="@{/admin/chefs/addBuffet}">Aggiungi buffet</a>
-			<li><a th:href="@{/admin/editBuffet}">Modifica buffet</a>
-			<li><a th:href="@{/chefs}">Consulta i nostri chef</a></li>
-			<li><a th:href="@{/buffets}">Consulta i nostri buffet</a></li>
-		</ul>
-	</div>
-	<div>
-		<a th:href="@{/logout}">Logout</a>
- 	</div>	
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div th:replace="fragments/base.html :: sfondo2"></div>
+		<div id="text">
+			<h3>Sezione riservata agli amministratori</h3>
+			<ul>
+				<li><a th:href="@{/admin/chefForm}">Aggiungi chef</a></li>
+				<li><a th:href="@{/admin/chefs/addBuffet}">Aggiungi buffet</a>
+				<li><a th:href="@{/admin/editBuffet}">Modifica buffet</a>
+			</ul>
+		</div>
+		<div>
+			<a th:href="@{/logout}">Logout</a>
+	 	</div>	
 </body>
 
 </html>

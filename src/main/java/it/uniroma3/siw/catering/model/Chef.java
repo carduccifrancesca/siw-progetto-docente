@@ -35,6 +35,13 @@ public class Chef {
 			   fetch = FetchType.EAGER)
 	private List<Buffet> buffet;
 	
+	public Chef(String nome, String cognome, String nazionalita, List<Buffet> buffet) {
+		this.nome = nome;
+		this.cognome = cognome;
+		this.nazionalita = nazionalita;
+		this.buffet = buffet;
+	}
+	
 	public Chef() {
 		this.buffet = new ArrayList<>();
 	}

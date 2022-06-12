@@ -4,20 +4,16 @@
 	<head>  
 	    <meta charset="ISO-8859-1" />
 	    <title>Societa' Catering</title>
-		<link rel="stylesheet" href="index.css"/>
+		<link rel="stylesheet" href="css/my-style.css"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head> 
 	 
 	<body> 
-	
-	<header> 
-		<h1 id="titolo">Catering</h1>
-	</header>
-	<div>
-		<h3>Registrazione andata a buon fine!</h3>
-	</div>
-	
-	<footer><a th:href="@{/index}">Home</a></footer>
-</body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div th:replace="fragments/base.html :: sfondo1"></div>
+		<div id="text">
+			<h3>La registrazione e' andata a buon fine!</h3>
+		</div>
+	</body>
 
 </html>

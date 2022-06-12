@@ -16,6 +16,13 @@ public class User {
 	private String nome;
 	private String cognome;
 	
+	public User() {}
+	
+	public User(String nome, String cognome) {
+		this.nome = nome;
+		this.cognome = cognome;
+	}
+	
 	public Long getId() {
 		return id;
 	}

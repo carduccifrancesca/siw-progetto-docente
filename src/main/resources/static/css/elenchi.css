@@ -1,0 +1,23 @@
+#container {
+	position: absolute;
+	margin: 50px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+}
+
+#section {
+	margin: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+
+img {
+	width: 35%;
+	position: relative;
+	border-radius: 7px;
+}
+
+#elenco {
+	font-size: 18px;
+}
