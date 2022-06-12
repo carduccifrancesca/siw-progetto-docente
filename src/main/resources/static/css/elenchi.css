@@ -21,3 +21,33 @@ img {
 #elenco {
 	font-size: 18px;
 }
+
+#select {
+	font-size: smaller;
+	color: #ad043d;
+}
+
+#select:hover {
+	color: black;
+	font-weight: bold;
+}
+
+.section-item {
+	margin: 20px 0;
+}
+
+#button {
+	position: relative;
+	font-size: 18px;
+	padding: 3px;
+	border-style: solid;
+	color: white;
+	background-color: #ad043d;
+	border-radius: 3px;
+	margin: 10px 0;
+}
+
+#button:hover {
+	color: #ad043d;
+	background-color: white;
+}

@@ -3,44 +3,40 @@
 
 	<head>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-		<title>Inserimento chef</title>			
+		<title>Inserimento chef</title>
+		<link rel="stylesheet" th:href="@{/css/form.css}"/>
+		<link rel="stylesheet" th:href="@{/css/my-style.css}"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
 	</head>
 	
 	<body>
-	<header> 
-		<div><strong>Inserimento dati chef</strong></div>
-	</header>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div th:replace="fragments/base.html :: sfondo3"></div>
 	
-	<div>
-
-		<form th:action="@{/admin/chef}" method="POST" th:object="${chef}">
-	
-			<div>
-				<span>Nome: </span>
-				<span><input type="text" th:field="*{nome}"/></span>
-			</div>
-			
-			<div>
-				<span>Cognome: </span>
-				<span><input type="text" th:field="*{cognome}"/></span>	
-			</div>
-			
-			<div>
-				<span>Nazionalità: </span>
-				<span><input type="text" th:field="*{nazionalita}"/></span>
-			</div>
-			
-			<div>
-				<button type="submit">Conferma nuovo chef</button>
-			</div>
-			
-		</form>
-	
-	</div>
-	
-	<div>
-		<a href="/"><strong>Home</strong></a>
-	</div>
+		<div id="text">
+			<form id="form" th:action="@{/admin/chef}" method="POST" th:object="${chef}">
+				<div class="form-item">
+					<div>Nome: </div>
+					<div><input type="text" th:field="*{nome}"/></div>
+				</div>
+				
+				<div class="form-item">
+					<div>Cognome: </div>
+					<div><input type="text" th:field="*{cognome}"/></div>	
+				</div>
+				
+				<div class="form-item">
+					<div>Nazionalità: </div>
+					<div><input type="text" th:field="*{nazionalita}"/></div>
+				</div>
+				
+				<div class="button">
+					<button type="submit">Conferma</button>
+				</div>
+				
+			</form>
+		
+		</div>
 	</body>
 
 </html>

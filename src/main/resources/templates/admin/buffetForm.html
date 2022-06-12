@@ -4,15 +4,16 @@
 	<head>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 		<title>Inserimento buffet</title>
-		<link rel="stylesheet" th:href="@{css/form.css}"/>
-		<link rel="stylesheet" th:href="@{css/my-style.css}"/>
+		<link rel="stylesheet" th:href="@{/css/form.css}"/>
+		<link rel="stylesheet" th:href="@{/css/my-style.css}"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">		
 	</head>
 	
 	<body>
 		<header th:replace="fragments/base.html :: intestazione"></header>
-		<div>
-			<form th:action="@{'/admin' + '/chef' + '/' + ${chef.id} + '/buffet'}" 
+		<div th:replace="fragments/base.html :: sfondo3"></div>
+		<div id="text">
+			<form id="form" th:action="@{'/admin' + '/chef' + '/' + ${chef.id} + '/buffet'}" 
 			method="POST" th:object="${buffet}">
 				<div><h3>Inserisci un nuovo buffet</h3></div>
 				<div class="form-item">
@@ -24,12 +25,9 @@
 					<div><input type="text" th:field="*{descrizione}"/></div>	
 				</div>
 				<div class="button">
-					<button type="submit">Conferma nuovo buffet</button>
+					<button type="submit">Conferma</button>
 				</div>
 			</form>
-		</div>
-		<div>
-			<a href="/"><strong>Home</strong></a>
 		</div>
 	</body>
 
