@@ -12,18 +12,10 @@
 	<body> 
 		<header th:replace="fragments/base.html :: intestazione"></header>
 		<div th:replace="fragments/base.html :: sfondo1"></div>
-		<div id="welcome-text">
-			<h1>Offriamo servizi di catering per tutti i tuoi eventi.</h1>
-			<h2>Per saperne di piu' accedi o registrati</h2>
-			<div id="buttons">
-				<div class="button">
-					<a th:href="@{/login}">Accedi</a>
-			  	</div>
-				<div class="button">
-					<a th:href="@{/register}">Registrati</a>
-			  	</div>
-			</div>	  	
+		<div id="text">
+			<h3>La registrazione e' andata a buon fine!</h3>
+			<h3 class="button"><a th:href="@{/login}">Effettua l'accesso</a></h3>
 		</div>
- 	</body>
+	</body>
 
 </html>

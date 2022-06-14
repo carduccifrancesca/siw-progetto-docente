@@ -26,7 +26,7 @@ public class ChefController {
 	@Autowired
 	private ChefValidator chefValidator;
 
-	@PostMapping("/chef")
+	@PostMapping("/admin/chef")
 	public String addChef(@Valid @ModelAttribute(value="chef") Chef chef, 
 			BindingResult bindingResult, Model model) {
 
@@ -39,10 +39,10 @@ public class ChefController {
 		}
 		else {
 			model.addAttribute("chef", chef);
-			return "chefForm.html"; 
+			return "admin/chefForm.html"; 
 		}
 	}
-
+	
 	@GetMapping("/chef/{id}")
 	public String getChef(@PathVariable("id")Long id, Model model) {
 		Chef chef = chefService.findById(id);
@@ -57,16 +57,16 @@ public class ChefController {
 		return "chefs.html";
 	}
 
-	@GetMapping("/chefForm")
+	@GetMapping("/admin/chefForm")
 	public String chefForm(Model model) {
 		model.addAttribute("chef", chefService.createChef());
-		return "chefForm.html";
+		return "admin/chefForm.html";
 	}
 	
-	@GetMapping("/chefs/addBuffet") 
+	@GetMapping("/admin/chefs/addBuffet") 
 	public String addBuffet(Model model) {
 		model.addAttribute("chefs", chefService.findAll());
-		return "selezionaChef.html";
+		return "admin/selezionaChef.html";
 	}
 }
 
