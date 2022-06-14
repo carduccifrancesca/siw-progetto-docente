@@ -22,6 +22,9 @@ public class BuffetService {
 	@Autowired
 	private PiattoService piattoService;
 	
+	@Autowired
+	private ChefService chefService;
+	
 	@Transactional
 	public void save(Buffet buffet, Chef chef) {
 		buffet.setChef(chef);
@@ -96,5 +99,14 @@ public class BuffetService {
 		Piatto piatto = piattoService.findById(piattoId);
 		buffet.addPiatto(piatto);
 		buffetRepository.save(buffet);
+	}
+
+	@Transactional
+	public void removeBuffet(Long buffetId) {
+		Buffet buffet = this.findById(buffetId);
+		for(Piatto piatto : buffet.getPiatti())
+			this.removePiattoFromBuffet(buffetId, piatto.getId());
+		chefService.removeBuffetFromChef(buffet.getChef(), buffet);
+		this.delete(buffet);
 	}
 }

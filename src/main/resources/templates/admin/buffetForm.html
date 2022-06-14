@@ -16,13 +16,18 @@
 			<form id="form" th:action="@{'/admin' + '/chef' + '/' + ${chef.id} + '/buffet'}" 
 			method="POST" th:object="${buffet}">
 				<div><h3>Inserisci un nuovo buffet</h3></div>
+				  <div th:if="${#fields.hasGlobalErrors()}">
+				    <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+				  </div>			
 				<div class="form-item">
 					<div>Nome: </div>
-					<div><input type="text" th:field="*{nome}"/></div>
+					<div><input type="text" th:field="*{nome}" required/></div>
+					<div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
 				</div>
 				<div class="form-item">
 					<div>Descrizione: </div>
-					<div><input type="text" th:field="*{descrizione}"/></div>	
+					<div><input type="text" th:field="*{descrizione}" required/></div>	
+					<div th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></div>
 				</div>
 				<div class="button">
 					<button type="submit">Conferma</button>

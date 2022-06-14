@@ -15,19 +15,26 @@
 	
 		<div id="text">
 			<form id="form" th:action="@{/admin/chef}" method="POST" th:object="${chef}">
+				<div><h3>Inserisci un nuovo chef</h3></div>
+				<div th:if="${#fields.hasGlobalErrors()}">
+				    <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+				</div>
 				<div class="form-item">
 					<div>Nome: </div>
-					<div><input type="text" th:field="*{nome}"/></div>
+					<div><input type="text" th:field="*{nome}" required/></div>
+					<div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
 				</div>
 				
 				<div class="form-item">
 					<div>Cognome: </div>
-					<div><input type="text" th:field="*{cognome}"/></div>	
+					<div><input type="text" th:field="*{cognome}" required/></div>
+					<div th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></div>	
 				</div>
 				
 				<div class="form-item">
 					<div>Nazionalità: </div>
-					<div><input type="text" th:field="*{nazionalita}"/></div>
+					<div><input type="text" th:field="*{nazionalita}" required/></div>
+					<div th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></div>
 				</div>
 				
 				<div class="button">

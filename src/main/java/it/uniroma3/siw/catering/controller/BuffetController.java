@@ -66,6 +66,7 @@ public class BuffetController {
 	public String getBuffets(@PathVariable("chefId") Long chefId, Model model) {
 		Chef chef = chefService.findById(chefId);
 		model.addAttribute("buffets", buffetService.findAllByChef(chef));
+		model.addAttribute("chef", chef);
 		return "buffets.html";
 	}
 	
@@ -114,5 +115,23 @@ public class BuffetController {
 		model.addAttribute("piattiAssenti", buffetService.findPiattiNotInBuffet(buffetId));
 		return "admin/editBuffet.html";
 	}
+	
+	@GetMapping("/admin/removeBuffet")
+	public String chooseBuffetToRemove(Model model) {
+		model.addAttribute("buffets", buffetService.findAll());
+		return "admin/selectBuffetToRemove.html";
+	}
 
+	@GetMapping("/admin/removeBuffet/{buffetId}")
+	public String removeBuffet(@PathVariable("buffetId")Long buffetId, Model model) {
+		model.addAttribute("buffet", buffetService.findById(buffetId));
+		return "admin/removeBuffet.html";
+	}
+	
+	@GetMapping("/admin/confermaRemoveBuffet/{buffetId}")
+	public String confermaRemoveBuffet(@PathVariable("buffetId")Long buffetId, Model model) {
+		buffetService.removeBuffet(buffetId);
+		model.addAttribute("buffets", buffetService.findAll());
+		return "admin/selectBuffetToRemove.html";
+	}
 }

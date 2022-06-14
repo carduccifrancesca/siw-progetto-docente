@@ -42,7 +42,7 @@ public class ChefController {
 			return "admin/chefForm.html"; 
 		}
 	}
-
+	
 	@GetMapping("/chef/{id}")
 	public String getChef(@PathVariable("id")Long id, Model model) {
 		Chef chef = chefService.findById(id);
