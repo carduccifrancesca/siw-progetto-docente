@@ -1,0 +1,77 @@
+PROGETTO CATERING
+
+CASI D'USO
+
+
+1) CREA UN NUOVO CHEF
+
+1. L'amministratore effettua il login al Sistema
+2. L'amministratore seleziona l'attività "Aggiungi chef"
+3  L'amministratore inserisce le informazioni relative allo chef (nome, cognome, nazionalita') e conferma l'inserimento
+4. Il sistema mostra le informazioni relative allo chef inserito
+L'amministratore ripete il passo 6 finché non conferma l'inserimento del nuovo buffet
+
+
+2) CREA NUOVO BUFFET 
+
+1. L'amministratore effettua il login al Sistema
+2. L'amministratore seleziona l'attività "Aggiungi Buffet"
+3. Il Sistema mostra tutti gli chef disponibili
+4. L'amministratore seleziona uno Chef
+5  L'amministratore inserisce le informazioni relative al buffet (nome, descrizione) e conferma l'inserimento
+6. L'amministratore inserisce un piatto al buffet
+L'amministratore ripete il passo 6 finché non conferma l'inserimento del nuovo buffet
+
+3) MODIFICA PIATTI DI UN BUFFET 
+
+1. L'amministratore effettua il login al Sistema
+2. L'amministratore seleziona l'attività "Modifica Buffet"
+3. Il Sistema mostra tutti i buffet disponibili
+4. L'amministratore seleziona un buffet
+5. L'amministratore seleziona l'attività "Modifica"
+6. L'amministratore sceglie un piatto da aggiungere al buffet
+7. L'amministratore può anche scegliere di rimuovere un piatto dal buffet
+L'amministratore ripete i passi 6-7 finché non indica che ha terminato
+
+4) RIMOZIONE BUFFET
+
+1. L'amministratore effettua il login al Sistema
+2. L'amministratore seleziona l'attività "Rimuovi Buffet"
+3. Il Sistema mostra tutti i buffet disponibili
+4. L'amministratore seleziona un buffet
+5. L'amministratore seleziona l'attività "Rimuovi"
+6. Il sistema chiede la conferma della rimozione
+7. L'amministratore conferma la volontà di rimuovere il buffet
+
+5) CONSULTA BUFFET DISPONIBILI (fatto)
+
+1. L'utente seleziona l'attività "Consulta i nostri buffet"
+2. Il Sistema mostra tutti i buffet disponibili
+3. L'utente seleziona un buffet
+4. Il sistema mostra le informazioni relative al buffet (nome, descrizione, chef e piatti)
+
+
+6) CONSULTA BUFFET ASSOCIATI A UNO CHEF 
+
+1. L'utente seleziona l'attività "Consulta i nostri chef"
+2. Il Sistema mostra gli chef disponibili
+3. L'utente seleziona uno chef tra quelli disponibili
+4. Il Sistema mostra le informazioni relative allo chef selezionato
+5. L'utente seleziona l'attività "Consulta buffet"
+6. Il Sistema mostra i buffet associati allo chef selezionato
+7. L'utente seleziona un buffet per visualizzare le informazioni a esso associate
+
+7) CONSULTA INGREDIENTI DI UN PIATTO (fatto)
+
+1. L'utente seleziona l'attività "Consulta i nostri buffet"
+2. Il Sistema mostra tutti i buffet disponibili
+3. L'utente seleziona un buffet
+4. Il sistema mostra le informazioni relative al buffet (nome, descrizione, chef e piatti)
+5. L'utente seleziona un piatto
+6. Il sistema mostra gli ingredienti associati al piatto
+7. L'utente seleziona un ingrediente
+8. Il sistema mostra le informazioni relative all'ingrediente selezionato (nome, origine, descrizione)
+
+
+
+
