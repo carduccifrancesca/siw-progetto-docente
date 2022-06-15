@@ -104,8 +104,7 @@ public class BuffetService {
 	@Transactional
 	public void removeBuffet(Long buffetId) {
 		Buffet buffet = this.findById(buffetId);
-		for(Piatto piatto : buffet.getPiatti())
-			this.removePiattoFromBuffet(buffetId, piatto.getId());
+		buffet.setPiatti(new ArrayList<>());
 		chefService.removeBuffetFromChef(buffet.getChef(), buffet);
 		this.delete(buffet);
 	}

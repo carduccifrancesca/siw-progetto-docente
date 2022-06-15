@@ -34,6 +34,13 @@ a:hover .text-item {
 	background-size: cover;
 }
 
+#admin {
+	background-image: url(../images/sfondo3.jpg);
+	width: 100%;
+	height: 100vh;
+	background-size:cover;
+}
+
 #bottoni {
 	margin: 20px;
 	display:flex;
