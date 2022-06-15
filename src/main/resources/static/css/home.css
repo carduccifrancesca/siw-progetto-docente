@@ -56,10 +56,18 @@ a:hover .text-item {
 	align-items: center;
 }
 
+#servizi a:hover {
+	color: black;
+}
+
 .button {
 	border-style: solid;
 	border-radius: 3px;
 	border-color: #ad043d;
 	border-width: 0.1px;
 	margin: 20px;
+}
+
+#bottoni .button a:hover {
+	color: #ad043d;
 }

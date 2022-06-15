@@ -43,7 +43,7 @@ L'amministratore ripete i passi 6-7 finché non indica che ha terminato
 6. Il sistema chiede la conferma della rimozione
 7. L'amministratore conferma la volontà di rimuovere il buffet
 
-5) CONSULTA BUFFET DISPONIBILI (fatto)
+5) CONSULTA BUFFET DISPONIBILI
 
 1. L'utente seleziona l'attività "Consulta i nostri buffet"
 2. Il Sistema mostra tutti i buffet disponibili
@@ -61,7 +61,7 @@ L'amministratore ripete i passi 6-7 finché non indica che ha terminato
 6. Il Sistema mostra i buffet associati allo chef selezionato
 7. L'utente seleziona un buffet per visualizzare le informazioni a esso associate
 
-7) CONSULTA INGREDIENTI DI UN PIATTO (fatto)
+7) CONSULTA INGREDIENTI DI UN PIATTO
 
 1. L'utente seleziona l'attività "Consulta i nostri buffet"
 2. Il Sistema mostra tutti i buffet disponibili
