@@ -12,16 +12,15 @@
 	<body> 
 		<header th:replace="fragments/base.html :: intestazione"></header>
 		<div id="text-section">
-			<a name="admin" id="admin">
+			<div id="admin">
 				<div class="text-item">
 					<h3>Sezione riservata agli amministratori</h3>
-						<h2><a th:href="@{/admin/chefForm}">Aggiungi chef</a></h2>
-						<h2><a th:href="@{/admin/chefs/addBuffet}">Aggiungi buffet</a></h2>
-						<h2><a th:href="@{/admin/editBuffet}">Modifica buffet</a></h2>
-						<h2><a th:href="@{/admin/removeBuffet}">Rimuovi buffet</a></h2>
+					<h2><a th:href="@{/admin/chefForm}">Aggiungi chef</a></h2>
+					<h2><a th:href="@{/admin/chefs/addBuffet}">Aggiungi buffet</a></h2>
+					<h2><a th:href="@{/admin/editBuffet}">Modifica buffet</a></h2>
+					<h2><a th:href="@{/admin/removeBuffet}">Rimuovi buffet</a></h2>
 				</div>
-			</a>
-			
+			</div>
 			<a name="about" id="about">	
 				<div class="text-item">
 					<h2>Esperienza decennale nel campo dei servizi catering</h2>
